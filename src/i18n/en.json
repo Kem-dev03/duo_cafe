@@ -1,0 +1,12 @@
+    {
+        "nav_home" : "Home",
+        "nav_about" : "Abot Us",
+        "nav_contact" : "Contacts",  
+        "nav_gallarey" : "Galerie",
+        "nav_menu" : "Menu",
+        "perfect_brew" : "perfect brew <br> urban taste",
+        "cozy_corner" : "Your cozy corner for coffee and deserts",
+        "about_text" : "At DuoCafe, we serve only <span> 100% Specialty Arabica </span> <span><br> hand-picked </span> from high-altitude plantations in Ethiopia and Brazil.<br> Each bean undergoes careful artisan roasting to reveal a unique flavor profile:<br> from subtle floral notes to a rich chocolate finish.<br> We control every stage – from grind adjustment to the <span>perfect serving temperature </span> of your cup.",
+        "info_text" : "Our quality standard",
+        "reviews" : "Words from our visitors"
+    }

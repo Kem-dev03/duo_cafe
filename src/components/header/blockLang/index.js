@@ -1,0 +1,1 @@
+export { blockLang } from "./blockLang";
