@@ -64,7 +64,7 @@ body{
 
 
 .block1{
-    background-image: url('/duo_cafe/img/block1.jpg');
+    background-image: url('./img/block1.jpg');
     &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -116,7 +116,7 @@ body{
 }
 
 .block2{
-    background-image: url('/duo_cafe/img/block2.jpg');
+    background-image: url('./img/block2.jpg');
         &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -124,7 +124,7 @@ body{
 }
 
 .block3{
-    background-image: url('/duo_cafe/img/block3.jpg');
+    background-image: url('./img/block3.jpg');
         &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -132,7 +132,7 @@ body{
 }
 
 .block4{
-    background-image: url('/duo_cafe/img/block4.jpg');
+    background-image: url('./img/block4.jpg');
         &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -140,7 +140,7 @@ body{
 }
 
 .block5{
-    background-image: url('/duo_cafe/img/block5.jpg');
+    background-image: url('./img/block5.jpg');
         &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -148,7 +148,7 @@ body{
 }
 
 .block6{
-    background-image: url('/duo_cafe/img/block6.jpg');
+    background-image: url('./img/block6.jpg');
         &:hover{
         transform: scale(1.1);
         z-index: 2;
@@ -156,7 +156,7 @@ body{
 }
 
 .info{
-    background-image: url('/duo_cafe/img/coffe55.png');
+    background-image: url('../../img/coffe55.png');
     width: 100vw;
     margin-left: calc(50% - 50vw);
     height: 400px;
@@ -238,28 +238,28 @@ body{
 }
 
 .rev1 {
-    background-image: url('/duo_cafe/img/rev1.png');
+    background-image: url(../../../img/rev1.png);
     top: 70px;
     left: 560px;
     height: 200px;
 }
 
 .rev2 {
-    background-image: url('/duo_cafe/img/rev2.png');
+    background-image: url(../../../img/rev2.png);
     top: 440px;
     right: 650px;
     height: 110px;
 }
 
 .rev3 {
-    background-image: url('/duo_cafe/img/rev3.png');
+    background-image: url(../../../img/rev3.png);
     top: 0px;
     right: 50px;
     height: 170px;
 }
 
 .rev4 {
-    background-image: url('/duo_cafe/img/rev4.png');
+    background-image: url(../../../img/rev4.png);
     top: 160px;
     left: 170px;
     height: 175px;
