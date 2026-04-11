@@ -107,7 +107,7 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
     Menu Page
     `,E=()=>`
     Page 404
-    `,D=`/assets/coffee2-DEi4WC9A.png`,O=e=>(setTimeout(()=>{let e=document.querySelector(`.about_text`);e&&k.observe(e)},100),setTimeout(()=>{let e=document.querySelector(`.reviews`);e&&A.observe(e)},100),`
+    `,D=`/duo_cafe/assets/coffee2-DEi4WC9A.png`,O=e=>(setTimeout(()=>{let e=document.querySelector(`.about_text`);e&&k.observe(e)},100),setTimeout(()=>{let e=document.querySelector(`.reviews`);e&&A.observe(e)},100),`
 <div class="home">
         <div class="home1"> 
             <img src="${D}" alt="Coffee">
