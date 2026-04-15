@@ -9,6 +9,7 @@ export const footer = () => {
             <div class="footer__top">
                 
                 <div class="footer__brand">
+                <link rel="https://www.instagram.com/duocafes?igsh=eTNweTFhMGpmbmox" href="">
                     <h2 class="footer__logo">DuoCafe</h2>
                     <p class="footer__tagline">Elevating your daily ritual.<br>One cup at a time.</p>
                     <div class="footer__socials">
