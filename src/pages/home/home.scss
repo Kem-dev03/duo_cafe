@@ -1,7 +1,7 @@
 
 
 body{
-    min-height: 350vh;
+    min-height: 100vh;
     background-color: #1E2226;
     overflow-x: hidden;
 }
@@ -210,19 +210,19 @@ body{
 }
 
 .reviews{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 550px;
     opacity: 0;
     list-style: none;
     padding: 0;
-    margin-bottom: 550px;
 }
 
 .rev1, .rev2, .rev3, .rev4 {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    width: 100%;
+    width: 500px;
+    max-width: 90vw;
+    margin: 0 auto; /* Centers the cards before the left/right offsets are applied */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

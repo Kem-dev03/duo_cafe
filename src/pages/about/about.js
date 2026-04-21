@@ -1,5 +1,6 @@
-export const about = () =>  {
-    return `
-    About Us Page
+export const about = (t) =>  {
+    return /*html*/`
+    <div class="about_png"></div>
+
     `
 }
