@@ -1,12 +1,234 @@
+/* ==========================================================================
+   Цветовая палитра "Dark Tech"
+   ========================================================================== */
+$bg-dark: #121416;
+$accent: #48C0B5;
+$text-white: #FFFFFF;
+$text-gray: #CCCCCC;
 
-.about_page{
-    width: 100%;
-    height: 100vh;
+.dark-tech-theme {
+    background-color: $bg-dark;
+    color: $text-white;
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Выравнивание на всю ширину экрана */
 }
 
-.zoom_png{
-    background-image: url(../../../img/zoom_pl2.png) ;
-    width: 100%;
-    height: 50vh;
+/* ==========================================================================
+   Типографика
+   ========================================================================== */
+.dark-tech-theme h1,
+.dark-tech-theme h2,
+.dark-tech-theme h3 {
+    font-weight: 800; /* EXTRA BOLD */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    color: $text-white;
 }
 
+.dark-tech-theme p {
+    font-weight: 400; /* REGULAR */
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: $text-gray;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Hero Секция
+   ========================================================================== */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Сделаем баннер чуть выше для эпичности */
+    background-size: cover;
+    background-position: center 80%; /* Поднимаем картинку (смещаем видимую область ниже к зернам) */
+    background-attachment: fixed; /* Эффект параллакса для фона */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Смещаем текст влево */
+    text-align: left;
+    padding: 0 10%; /* Даем отступы по краям */
+    
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        /* Сложный кинематографичный градиент:
+           1. Темный слева (чтобы текст читался) -> Прозрачный справа (чтобы фото было ярким)
+           2. Таяние внизу (чтобы сливалось с сайтом) */
+        background: linear-gradient(to right, rgba($bg-dark, 0.95) 0%, rgba($bg-dark, 0.5) 45%, rgba($bg-dark, 0) 100%),
+                    linear-gradient(to bottom, rgba($bg-dark, 0) 70%, rgba($bg-dark, 1) 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        border-left: 4px solid $accent; /* Стильная бирюзовая линия слева */
+        padding-left: 40px;
+        
+        h1 {
+            font-size: 5rem;
+            color: $text-white;
+            line-height: 1.1;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.8); /* Глубокая тень текста */
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: $text-gray;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+    }
+
+    /* На мобильных возвращаем по центру, так как места мало */
+    @media (max-width: 768px) {
+        justify-content: center;
+        text-align: center;
+        padding: 0 5%;
+        
+        .hero-overlay {
+            /* На телефоне просто затемняем низ и центр */
+            background: linear-gradient(to top, rgba($bg-dark, 1) 0%, rgba($bg-dark, 0.4) 100%);
+        }
+
+        .hero-content {
+            border-left: none;
+            padding-left: 0;
+            h1 { font-size: 3rem; }
+        }
+    }
+}
+
+/* ==========================================================================
+   Шахматная архитектура (Row)
+   ========================================================================== */
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 100px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    /* Меняем порядок для секции Колумбия */
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .about-text {
+        flex: 1;
+        h2 {
+            font-size: 2.5rem;
+            border-left: 4px solid $accent;
+            padding-left: 15px;
+        }
+    }
+
+    .about-image {
+        flex: 1;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Микро-анимация при наведении */
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+
+    @media (max-width: 992px) {
+        flex-direction: column !important; /* На мобильных выстраиваем в колонку */
+        padding: 60px 5%;
+        gap: 40px;
+    }
+}
+
+/* ==========================================================================
+   Секция "DuoCafe v číslech" (Квадраты)
+   ========================================================================== */
+.about-numbers-section {
+    padding: 80px 10% 120px;
+    text-align: center;
+
+    .numbers-title {
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+    }
+
+    .numbers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+        @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 600px) { grid-template-columns: 1fr; }
+    }
+
+    .number-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 40px 20px;
+        border-radius: 16px;
+        transition: all 0.4s ease;
+
+        h3 {
+            color: $accent;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Стильный Hover-эффект (Бирюзовое свечение) */
+        &:hover {
+            border-color: rgba($accent, 0.4);
+            background: rgba($accent, 0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba($accent, 0.15);
+        }
+    }
+}
+
+/* ==========================================================================
+   Чистые CSS Анимации появления при скролле
+   ========================================================================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    /* Запасная анимация для старых браузеров (сработает сразу при загрузке) */
+    animation: fadeInUpFallback 1s ease-out forwards;
+    
+    /* Современная функция привязки анимации к скроллу (Только CSS, без JS!) */
+    @supports (animation-timeline: view()) {
+        animation: fadeInUpScroll linear both;
+        animation-timeline: view();
+        animation-range: entry 5% cover 30%; /* Начинается когда элемент на 5% в экране и заканчивается на 30% */
+    }
+}
+
+@keyframes fadeInUpFallback {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpScroll {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

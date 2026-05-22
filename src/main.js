@@ -4,6 +4,86 @@ import { InitRouter } from './router'
 
 import './style.css'
 
+// JavaScript анимация: "Растущие" карточки и бегущие цифры по очереди
+const initCounters = () => {
+  const section = document.querySelector('.about-numbers-section');
+  const cards = document.querySelectorAll('.number-card');
+  
+  if (!section || cards.length === 0) return; // Если мы не на странице About, ничего не делаем
+
+  // Сразу подготавливаем карточки: сохраняем их финальный текст и ставим значение в "0"
+  cards.forEach(card => {
+    const counter = card.querySelector('h3');
+    if (counter) {
+      if (!counter.hasAttribute('data-target')) {
+        counter.setAttribute('data-target', counter.innerText.trim());
+      }
+      const targetText = counter.getAttribute('data-target');
+      const match = targetText.match(/^(\d+)(.*)$/);
+      if (match) {
+        counter.innerText = '0' + match[2]; // Ставим на ноль с суффиксом (например "0+")
+      }
+    }
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        
+        // Функция для плавной анимации одного счетчика (возвращает Promise)
+        const animateCounter = (card) => {
+          return new Promise(resolve => {
+            const counter = card.querySelector('h3');
+            if (!counter) return resolve();
+            
+            const targetText = counter.getAttribute('data-target');
+            const match = targetText.match(/^(\d+)(.*)$/);
+            
+            if (!match) return resolve();
+            
+            const targetNum = parseInt(match[1], 10);
+            const suffix = match[2];
+            
+            const duration = 1200; // Длительность анимации (1.2 секунды на карточку)
+            const start = performance.now();
+            
+            const update = (currentTime) => {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Плавное замедление к концу
+              const easeOut = 1 - (1 - progress) * (1 - progress);
+              const currentNum = targetNum * easeOut;
+              
+              if (progress < 1) {
+                counter.innerText = Math.ceil(currentNum) + suffix;
+                requestAnimationFrame(update);
+              } else {
+                counter.innerText = targetNum + suffix;
+                resolve(); // Сообщаем, что анимация завершена, можно запускать следующую
+              }
+            };
+            
+            requestAnimationFrame(update);
+          });
+        };
+
+        // Запускаем карточки строго по очереди (слева направо)
+        const runSequential = async () => {
+          for (const card of cards) {
+            await animateCounter(card);
+          }
+        };
+        
+        runSequential();
+        obs.unobserve(section); // Отключаем отслеживание после того как анимация сработала
+      }
+    });
+  }, { threshold: 0.3 }); // Срабатывает, когда секция видна на экране на 30%
+
+  observer.observe(section);
+};
+
 const renderApp = (page,currentPath) => {
   const currentLang = getLanguage();
   const t = (key) => getTranslation(currentLang,key);
@@ -30,6 +110,9 @@ const renderApp = (page,currentPath) => {
       renderApp(page,currentPath)
     })
   })
+
+  // Инициализируем наши JS-анимации после каждого рендера
+  initCounters();
 }
 
 InitRouter(renderApp)

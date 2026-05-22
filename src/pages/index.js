@@ -1,4 +1,3 @@
-export { gallery } from "./gallery";
 export { about } from "./about";
 export { contacts } from "./contacts";
 export { menu } from "./menu";

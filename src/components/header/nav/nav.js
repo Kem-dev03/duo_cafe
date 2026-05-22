@@ -12,10 +12,6 @@ const links = [
         text : "nav_contact"
     },
     {
-        path : "/gallery",
-        text : "nav_gallarey"
-    },
-    {
         path : "/menu",
         text : "nav_menu"
     }

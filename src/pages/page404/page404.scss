@@ -1,0 +1,176 @@
+.not-found-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    background-color: #121416;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+
+.not-found__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Неоновый текст 404 */
+.not-found__404 {
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 2px #48C0B5;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+
+    &::before {
+        content: '404';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        color: #48C0B5;
+        filter: blur(20px);
+        opacity: 0.5;
+        animation: pulse 2s infinite alternate;
+    }
+}
+
+/* CSS-Арт: Кофейная чашка */
+.not-found__cup-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite 1s; /* Задержка 1s для асинхронности с текстом */
+
+    .cup {
+        width: 60px;
+        height: 45px;
+        background: #ffffff;
+        border-radius: 0 0 30px 30px;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: -15px;
+            width: 20px;
+            height: 20px;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+        }
+    }
+
+    /* Горячий пар */
+    .steam {
+        position: absolute;
+        background: #48C0B5;
+        width: 4px;
+        border-radius: 4px;
+        bottom: 60px;
+        opacity: 0;
+        animation: steaming 2s infinite ease-out;
+
+        &.s1 { left: 35px; height: 15px; animation-delay: 0s; }
+        &.s2 { left: 45px; height: 25px; animation-delay: 0.5s; }
+        &.s3 { left: 55px; height: 15px; animation-delay: 1s; }
+    }
+}
+
+.not-found__text {
+    h2 { font-size: 2rem; margin-bottom: 15px; letter-spacing: 2px; }
+    p { color: #a0aab2; max-width: 450px; line-height: 1.6; margin-bottom: 40px; }
+}
+
+/* Кнопка с эффектом заливки */
+.btn-return {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 35px;
+    color: #48C0B5;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 2px solid #48C0B5;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    span, svg { position: relative; z-index: 2; transition: all 0.3s ease; }
+    svg { width: 20px; height: 20px; stroke: #48C0B5; stroke-width: 2; fill: none; }
+
+    &::before {
+        content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 100%;
+        background: #48C0B5; transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 1;
+    }
+
+    &:hover {
+        color: #121416;
+        box-shadow: 0 10px 25px rgba(72, 192, 181, 0.3);
+        svg { stroke: #121416; transform: translateX(5px); }
+        &::before { width: 100%; }
+    }
+}
+
+/* Ключевые кадры анимаций */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+@keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 0.7; filter: blur(25px); } }
+@keyframes steaming { 0% { transform: translateY(0) scaleX(1); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: translateY(-40px) scaleX(2); opacity: 0; } }
+
+/* ==========================================================================
+   Адаптив для планшетов и телефонов
+   ========================================================================== */
+@media (max-width: 768px) {
+    .not-found__404 {
+        font-size: 8rem;
+    }
+    .not-found__cup-wrapper {
+        margin-top: -40px; /* Корректируем отступ чашки под меньший шрифт */
+    }
+    .not-found__text {
+        h2 { font-size: 1.5rem; }
+        p { padding: 0 20px; }
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found__404 {
+        font-size: 5.5rem;
+    }
+    .not-found__cup-wrapper {
+        margin-top: -25px; /* Корректируем отступ чашки для телефонов */
+        transform: scale(0.8); /* Чуть уменьшаем саму чашку */
+        margin-bottom: 5px;
+    }
+    .not-found__text {
+        h2 { font-size: 1.25rem; }
+        p { font-size: 0.95rem; margin-bottom: 30px; }
+    }
+    .btn-return {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+}
