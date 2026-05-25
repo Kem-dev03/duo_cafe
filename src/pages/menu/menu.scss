@@ -7,7 +7,8 @@ $text-white: #FFFFFF;
 $text-gray: #CCCCCC;
 
 .menu-page {
-    background-color: $bg-dark;
+    /* Эффект студийной подсветки: светлый центр плавно уходит в базовый темный цвет по краям */
+    background: radial-gradient(circle at center, #1f2326 0%, $bg-dark 100%);
     color: $text-white;
     font-family: 'Montserrat', sans-serif;
     padding: 100px 5% 100px 5%;
@@ -123,7 +124,7 @@ $text-gray: #CCCCCC;
     border-radius: 12px;
     overflow: hidden;
     transition: box-shadow 0.4s ease, transform 0.4s ease;
-    background-color: #fff; /* Подложка на случай прозрачных краев у JPG */
+    background-color: #222629; /* Слегка осветленная подложка, чтобы карточки "отрывались" от фона */
 
     img {
         width: 100%;

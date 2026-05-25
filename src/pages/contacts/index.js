@@ -1,3 +1,3 @@
-export { contacts } from "./contscts";
+export { contacts } from "./contacts";
 
-import "./contacts.scss"
+import "./contacts.scss";

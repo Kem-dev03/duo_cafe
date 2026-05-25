@@ -105,6 +105,31 @@ const initMenuTabs = () => {
   });
 };
 
+// JavaScript логика для страницы Контактов
+const initContactsTabs = () => {
+  const locationBtns = document.querySelectorAll('.contact-loc-btn');
+  const page = document.querySelector('.contacts-page');
+  const cards = document.querySelectorAll('.contact-card');
+
+  if (!page || locationBtns.length === 0) return;
+
+  locationBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      locationBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const loc = btn.getAttribute('data-location');
+      
+      // Переключаем фон страницы
+      if (loc === 'praha3') page.classList.add('show-praha3');
+      else page.classList.remove('show-praha3');
+
+      // Переключаем информационные карточки
+      cards.forEach(card => card.classList.toggle('active', card.id === `card-${loc}`));
+    });
+  });
+};
+
 const renderApp = (page,currentPath) => {
   const currentLang = getLanguage();
   const t = (key) => getTranslation(currentLang,key);
@@ -135,6 +160,7 @@ const renderApp = (page,currentPath) => {
   // Инициализируем наши JS-анимации после каждого рендера
   initCounters();
   initMenuTabs();
+  initContactsTabs();
 }
 
 InitRouter(renderApp)
