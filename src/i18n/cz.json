@@ -25,5 +25,14 @@
     "about_num4_text": "Dokonalých šálků měsíčně",
     "not_found_title": "JEJDA! STRÁNKA NENALEZENA",
     "not_found_desc": "Zdá se, že se tato stránka někam rozlila. Pojďme vás vrátit k naší výborné kávě.",
-    "not_found_btn": "NÁVRAT DOMŮ"
+    "not_found_btn": "NÁVRAT DOMŮ",
+    "menu_title": "MENU",
+    "menu_breakfast": "SNÍDANĚ",
+    "menu_coffee": "KÁVA",
+    "menu_desserts": "DEZERTY",
+    "menu_drinks": "NÁPOJE",
+    "menu_pasta": "PASTA",
+    "menu_salads": "SALÁTY",
+    "menu_soups": "POLÉVKY",
+    "menu_pizza": "PIZZA"
 }

@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Цветовая палитра "Dark Tech"
+   ========================================================================== */
+$bg-dark: #121416;
+$accent: #48C0B5;
+$text-white: #FFFFFF;
+$text-gray: #CCCCCC;
+
+.menu-page {
+    background-color: $bg-dark;
+    color: $text-white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 100px 5% 100px 5%;
+    min-height: 100vh;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .menu-title {
+        font-size: 4rem;
+        font-weight: 800;
+        letter-spacing: 4px;
+        color: $text-white;
+        margin-bottom: 30px;
+    }
+}
+
+.location-switcher {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .location-btn {
+        background: transparent;
+        color: $text-gray;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+            background: $accent;
+            color: $bg-dark;
+            box-shadow: 0 5px 15px rgba($accent, 0.3);
+        }
+
+        &:hover:not(.active) {
+            color: $text-white;
+        }
+    }
+}
+
+.menu-container {
+    max-width: 1000px; /* Ограничиваем максимальную ширину для идеального отображения картинок */
+    margin: 0 auto;
+}
+
+.menu-section {
+    margin-bottom: 100px;
+
+    .section-title {
+        font-size: 3.5rem; /* Огромные заголовки */
+        font-weight: 800;
+        letter-spacing: 5px;
+        color: $text-white;
+        margin-bottom: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        position: relative;
+
+        /* Декоративная бирюзовая линия под заголовком */
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: $accent;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+        }
+    }
+}
+
+/* Логика отображения пиццы */
+.pizza-section {
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.show {
+        display: block;
+        opacity: 1;
+        animation: fadeInPizza 0.5s forwards;
+    }
+}
+
+@keyframes fadeInPizza {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Стили для готовых картинок меню */
+.menu-image-card {
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    background-color: #fff; /* Подложка на случай прозрачных краев у JPG */
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain; /* Картинка всегда видна целиком без обрезки */
+    }
+
+    /* Глубокое бирюзовое свечение при наведении */
+    &:hover {
+        box-shadow: 0 0 40px rgba($accent, 0.25);
+        transform: translateY(-2px);
+    }
+}
+
+/* ==========================================================================
+   Чистые CSS Анимации появления при скролле (Scroll Reveal)
+   ========================================================================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUpFallback 1s ease-out forwards;
+    
+    @supports (animation-timeline: view()) {
+        animation: fadeInUpScroll linear both;
+        animation-timeline: view();
+        animation-range: entry 5% cover 25%; 
+    }
+}
+
+@keyframes fadeInUpFallback { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUpScroll { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }

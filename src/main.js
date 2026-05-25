@@ -84,6 +84,27 @@ const initCounters = () => {
   observer.observe(section);
 };
 
+// JavaScript логика для вкладок локаций меню
+const initMenuTabs = () => {
+  const locationBtns = document.querySelectorAll('.location-btn');
+  const pizzaSection = document.getElementById('pizza-section');
+
+  if (locationBtns.length === 0 || !pizzaSection) return;
+
+  locationBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Убираем активный класс у всех кнопок и добавляем текущей
+      locationBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Проверяем выбранную локацию
+      const loc = btn.getAttribute('data-location');
+      if (loc === 'praha3') pizzaSection.classList.add('show');
+      else pizzaSection.classList.remove('show');
+    });
+  });
+};
+
 const renderApp = (page,currentPath) => {
   const currentLang = getLanguage();
   const t = (key) => getTranslation(currentLang,key);
@@ -113,6 +134,7 @@ const renderApp = (page,currentPath) => {
 
   // Инициализируем наши JS-анимации после каждого рендера
   initCounters();
+  initMenuTabs();
 }
 
 InitRouter(renderApp)

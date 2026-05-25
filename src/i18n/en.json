@@ -25,5 +25,14 @@
         "about_num4_text": "Perfect cups a month",
         "not_found_title": "OOPS! PAGE NOT FOUND",
         "not_found_desc": "Looks like this page spilled away. Let's get you back to our delicious coffee.",
-        "not_found_btn": "RETURN HOME"
+        "not_found_btn": "RETURN HOME",
+        "menu_title": "MENU",
+        "menu_breakfast": "BREAKFAST",
+        "menu_coffee": "COFFEE",
+        "menu_desserts": "DESSERTS",
+        "menu_drinks": "DRINKS",
+        "menu_pasta": "PASTA",
+        "menu_salads": "SALADS",
+        "menu_soups": "SOUPS",
+        "menu_pizza": "PIZZA"
     }
