@@ -10,10 +10,12 @@
     "reviews" : "Co říkají naši hosté",
     "about_hero_title": "NÁŠ PŘÍBĚH",
     "about_hero_subtitle": "Umění dokonalého šálku začíná zde",
-    "about_brazil_title": "BRAZÍLIE",
-    "about_brazil_text": "Spolupracujeme přímo s farmáři z regionu Cerrado. Přímé dodávky nám umožňují zaručit výjimečnou čerstvost a dohledatelnost každého kávového zrna. Jedná se o 100% výběrovou Arabiku, pěstovanou s láskou v ideální nadmořské výšce.",
-    "about_columbia_title": "KOLUMBIE",
-    "about_columbia_text": "Pouze ručně sbírané nejzralejší kávové třešně. Kolumbijská káva prochází přísnou kontrolou kvality v každé fázi zpracování. Pečlivě pražíme tato zrna, abychom odhalili jejich přirozenou sladkost, plné tělo a jemné ovocné tóny.",
+    "about_brazil_title": "BRAZÍLIE: GENETICKÉ DĚDICTVÍ",
+    "about_brazil_text": "Chuťový profil tradiční brazilské kávy je nezaměnitelný. Záměrně jsme vybrali tyto ikonické odrůdy pro jejich bohaté tóny čokolády a oříšků. Zasadili jsme je však do sopečné půdy na Sumatře. Tím zachováváme brazilský charakter a obohacujeme jej o hluboký indonéský terroir.",
+    "about_columbia_title": "KOLUMBIE: UŠLECHTILÁ VŮNĚ",
+    "about_columbia_text": "Kolumbijská káva je celosvětově ceněna pro svou zářivou vůni a jemnou ovocnou sladkost. Přenesli jsme tuto výjimečnou genetiku do Indonésie. V našem unikátním mikroklimatu na Sumatře si zachovává svou lehkost, ale získává komplexnější a plnější tělo.",
+    "about_sumatra_title": "INDONÉSIE: NÁŠ DOMOV",
+    "about_sumatra_text": "Sumatra je skutečným srdcem DuoCafe. Každé zrno, které pražíme, vyrostlo právě zde. Spojením špičkové genetiky z Brazílie a Kolumbie s úrodnou vulkanickou půdou Indonésie tvoříme naprosto jedinečnou kávu. Tropické podnebí jí dodává zemitou eleganci a dokonalou harmonii.",
     "about_numbers_title": "DUOCAFE V ČÍSLECH",
     "about_num1_val": "5+",
     "about_num1_text": "Přímých smluv s farmáři",
@@ -49,5 +51,10 @@
     "btn_instagram": "INSTAGRAM",
     "btn_call": "ZAVOLAT",
     "contact_address_label": "ADRESA",
-    "contact_hours_label": "OTEVÍRACÍ DOBA"
+    "contact_hours_label": "OTEVÍRACÍ DOBA",
+    "collage_title": "KOŘENY VE SVĚTĚ, SRDCE V SUMATŘE.",
+    "collage_text": "Brazilské a kolumbijské odrůdy, dovedené k dokonalosti na sopečné půdě Indonésie.",
+    "collage_sub_brazil": "DĚDICTVÍ",
+    "collage_sub_columbia": "CHARAKTER",
+    "collage_sub_sumatra": "PŮVOD"
 }

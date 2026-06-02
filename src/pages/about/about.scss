@@ -151,6 +151,157 @@ $text-gray: #CCCCCC;
         flex-direction: column !important; /* На мобильных выстраиваем в колонку */
         padding: 60px 5%;
         gap: 40px;
+        
+        .about-text h2 {
+            font-size: calc(1.5rem + 1.5vw); /* Адаптивный размер для заголовков */
+        }
+    }
+}
+
+/* ==========================================================================
+   Текст над коллажем
+   ========================================================================== */
+.collage-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto 20px;
+    padding: 0 5%;
+
+    h1 {
+        font-size: 3rem;
+        color: $text-white;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        margin: 40px auto 20px;
+        
+        h1 { font-size: calc(1.8rem + 2vw); }
+    }
+}
+
+/* ==========================================================================
+   Косой Асимметричный Коллаж
+   ========================================================================== */
+.coffee-collage {
+    display: flex;
+    height: 650px; /* Увеличили высоту коллажа для большей объемности */
+    margin: 40px auto 40px;
+    max-width: 1600px; /* Сделали блок шире */
+    padding: 0 5%; /* Уменьшили боковые отступы, чтобы растянуть картинки */
+    gap: 20px;
+
+    /* При наведении на весь блок, слегка гасим все карточки (кроме той, что под курсором) */
+    &:hover .collage-item {
+        opacity: 0.5;
+    }
+}
+
+.collage-item {
+    flex: 1;
+    position: relative;
+    transform: skewX(-10deg);
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    /* Внутренний контейнер, который возвращаем в прямое состояние (un-skew) */
+    .collage-inner {
+        position: absolute;
+        top: 0;
+        left: -20%; /* Расширяем влево и вправо, чтобы при выравнивании не было прозрачных углов */
+        width: 140%;
+        height: 100%;
+        transform: skewX(10deg);
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(18, 20, 22, 0.5); /* Темная вуаль по умолчанию */
+            transition: background 0.5s ease;
+        }
+    }
+
+    h3 {
+        position: relative;
+        z-index: 2;
+        font-size: 2.2rem;
+        color: $text-white;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transform: skewX(10deg); /* Отдельно возвращаем в прямое положение текст */
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+        transition: transform 0.5s ease;
+        
+        /* Стиль для новых смысловых субтитров ("Корни", "Культ") */
+        span {
+            display: block;
+            font-size: 0.9rem;
+            color: $accent;
+            letter-spacing: 6px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+    }
+
+    &.center {
+        flex: 1.4; /* Центральный элемент доминирует */
+        h3 { font-size: 3rem; }
+    }
+
+    /* Эффект Hover для конкретной карточки */
+    &:hover {
+        opacity: 1 !important;
+        flex: 1.8; /* Карточка расширяется */
+        box-shadow: 0 15px 40px rgba($accent, 0.2);
+
+        .collage-inner {
+            transform: skewX(10deg) scale(1.08); /* Плавный зум */
+            &::before {
+                background: rgba(18, 20, 22, 0.1); /* Высветляем фокус */
+            }
+        }
+
+        h3 {
+            transform: skewX(10deg) scale(1.1); /* Увеличиваем текст */
+        }
+    }
+}
+
+/* ==========================================================================
+   Подпись под коллажем
+   ========================================================================== */
+.collage-caption {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 120px;
+    padding: 0 5%;
+
+    p {
+        font-size: 1.1rem;
+        color: $accent;
+        letter-spacing: 2px;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 auto 80px;
+        p {
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+        }
     }
 }
 
@@ -194,6 +345,49 @@ $text-gray: #CCCCCC;
             background: rgba($accent, 0.05);
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba($accent, 0.15);
+        }
+    }
+}
+
+/* Адаптив для косого коллажа на мобильных устройствах */
+@media (max-width: 768px) {
+    .coffee-collage {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 0 5%;
+        margin: 40px auto 40px;
+
+        &:hover .collage-item {
+            opacity: 1; /* Отключаем затухание соседей на тач-устройствах */
+        }
+    }
+
+    .collage-item {
+        transform: none; /* Сбрасываем наклон */
+        height: 250px;
+        width: 100%;
+
+        .collage-inner {
+            left: 0;
+            width: 100%;
+            transform: none; /* Сбрасываем обратный наклон */
+        }
+
+        h3 { 
+            transform: none; 
+            font-size: calc(1.8rem + 1vw); 
+        }
+
+        &.center { 
+            height: 300px; 
+            h3 { font-size: calc(2rem + 1vw); } 
+        }
+
+        &:hover {
+            flex: none; /* Отключаем расширение флексов на телефонах */
+            .collage-inner { transform: scale(1.05); }
+            h3 { transform: scale(1.05); }
         }
     }
 }

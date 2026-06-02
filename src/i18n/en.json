@@ -10,10 +10,12 @@
         "reviews" : "Words from our visitors",
         "about_hero_title": "OUR STORY",
         "about_hero_subtitle": "The art of the perfect cup starts here",
-        "about_brazil_title": "BRAZIL",
-        "about_brazil_text": "We cooperate directly with farmers from the Cerrado region. Direct supplies allow us to guarantee exceptional freshness and traceability of every coffee bean. This is 100% selected Arabica, grown with love at the perfect altitude.",
-        "about_columbia_title": "COLOMBIA",
-        "about_columbia_text": "Only hand-picked ripest coffee berries. Colombian coffee undergoes strict quality control at every processing stage. We carefully roast these beans to reveal their natural sweetness, full body, and subtle fruity notes.",
+        "about_brazil_title": "BRAZILIAN HERITAGE",
+        "about_brazil_text": "The rich, chocolatey profiles of classic Brazilian coffee are beloved worldwide. We specifically select traditional Brazilian coffee varieties for their exceptional character. However, rather than sourcing from South America, we carefully cultivate these heritage trees on our dedicated plantations in Sumatra. This allows us to preserve the iconic Brazilian taste while enriching it with the unique terroir of the Indonesian highlands.",
+        "about_columbia_title": "COLOMBIAN LINEAGE",
+        "about_columbia_text": "Renowned for their vibrant aroma and subtle fruity sweetness, Colombian coffee varieties represent some of the finest genetics in the coffee world. We brought these exceptional seedlings to the heart of Indonesia. Planted in our Sumatran soil, they retain their signature brightness while developing a deeper, more complex body that can only be achieved in this unique microclimate.",
+        "about_sumatra_title": "OUR HOME: SUMATRA",
+        "about_sumatra_text": "Sumatra is the true heart of DuoCafe. Every single coffee bean we roast is grown right here, nurtured in the lush, volcanic earth of the Indonesian mountains. By taking world-class varieties from Brazil and Colombia and cultivating them in Sumatran soil, we create a truly unique cup. The tropical climate and high altitudes impart a deep, earthy elegance to the beans, resulting in a perfect harmony of global coffee heritage and passionate Indonesian craftsmanship.",
         "about_numbers_title": "DUOCAFE IN NUMBERS",
         "about_num1_val": "5+",
         "about_num1_text": "Direct contracts with farmers",
@@ -49,5 +51,10 @@
         "btn_instagram": "INSTAGRAM",
         "btn_call": "CALL",
         "contact_address_label": "ADDRESS",
-        "contact_hours_label": "OPENING HOURS"
+        "contact_hours_label": "OPENING HOURS",
+        "collage_sub_brazil": "THE ROOTS",
+        "collage_sub_columbia": "THE SOUL",
+        "collage_sub_sumatra": "THE CULT",
+        "collage_title": "ROOTS IN THE WORLD, HEART IN SUMATRA.",
+        "collage_text": "Brazilian and Colombian varieties, brought to perfection on the volcanic soil of Indonesia."
     }
