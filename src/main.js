@@ -136,7 +136,7 @@ const renderApp = (page,currentPath) => {
   document.querySelector('#app').innerHTML = `
   ${header(currentPath , t)}
   ${main(page, t)}
-  ${footer()}
+  ${footer(t)}
   `;
 
   // Mobile menu open/close logic

@@ -1,16 +1,16 @@
 import './footer.scss';
 
-export const footer = () => {
+export const footer = (t) => {
     return /* html */`
     <footer class="footer">
-        <div class="footer__watermark">COFFEE</div>
+        <div class="footer__watermark">DUO</div>
         
         <div class="footer__container">
             <div class="footer__top">
                 
                 <div class="footer__brand">
                     <h2 class="footer__logo">DuoCafe</h2>
-                    <p class="footer__tagline">Elevating your daily ritual.<br>One cup at a time.</p>
+                    <p class="footer__tagline">${t('footer_tagline') || 'Elevating your daily ritual.<br>One cup at a time.'}</p>
                     <div class="footer__socials">
                         <a href="https://www.instagram.com/duocafes?igsh=eTNweTFhMGpmbmox" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -28,25 +28,26 @@ export const footer = () => {
                 </div>
                 
                 <div class="footer__nav">
-                    <a href="/" class="footer__link">Home</a>
-                    <a href="/menu" class="footer__link">Menu</a>
-                    <a href="/contacts" class="footer__link">Contacts</a>
+                    <a href="/" class="footer__link">${t('nav_home')}</a>
+                    <a href="/about" class="footer__link">${t('nav_about')}</a>
+                    <a href="/menu" class="footer__link">${t('nav_menu')}</a>
+                    <a href="/contacts" class="footer__link">${t('nav_contact')}</a>
                 </div>
                 
                 <div class="footer__info">
                     <div class="footer__info-block">
-                        <h4>Location</h4>
-                        <p>Plzeňská <br>182/179</p>
+                        <h4>${t('footer_praha5') || 'PRAHA 5'}</h4>
+                        <p>${t('contact_address_p5')}</p>
                     </div>
                     <div class="footer__info-block">
-                        <h4>Hours</h4>
-                        <p>Mon-Fri: 7am - 8pm<br>Sat-Sun: 8am - 8pm</p>
+                        <h4>${t('footer_praha3') || 'PRAHA 3'}</h4>
+                        <p>${t('contact_address_p3')}</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer__bottom">
-                <p>Made with Love and Caffeine.</p>
+                <p>${t('footer_rights') || 'Made with Love and Caffeine.'}</p>
             </div>
         </div>
     </footer>
