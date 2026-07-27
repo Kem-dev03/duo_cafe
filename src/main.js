@@ -1,6 +1,7 @@
 import { header , footer , main } from './components'
 import { getLanguage , setLanguage , getTranslation } from './i18n'
-import { InitRouter } from './router'
+import page from 'page'
+import { InitRouter } from './router/index.js'
 
 import './style.css'
 
@@ -130,12 +131,18 @@ const initContactsTabs = () => {
   });
 };
 
-const renderApp = (page,currentPath) => {
+let currentPage;
+let currentPath;
+
+const renderApp = () => {
+  if (!currentPage) return; // Не рендерим, если страница еще не определена
+
   const currentLang = getLanguage();
   const t = (key) => getTranslation(currentLang,key);
+
   document.querySelector('#app').innerHTML = `
   ${header(currentPath , t)}
-  ${main(page, t)}
+  ${main(currentPage, t)}
   ${footer(t)}
   `;
 
@@ -152,8 +159,8 @@ const renderApp = (page,currentPath) => {
   langBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang
-      setLanguage(lang)
-      renderApp(page,currentPath)
+      setLanguage(lang);
+      renderApp(); // Просто перерисовываем с текущими данными
     })
   })
 
@@ -161,6 +168,15 @@ const renderApp = (page,currentPath) => {
   initCounters();
   initMenuTabs();
   initContactsTabs();
-}
+};
 
-InitRouter(renderApp)
+const handleRouteChange = (pageFn, ctx) => {
+  currentPage = pageFn;
+  currentPath = ctx.pathname;
+  renderApp();
+};
+
+// Передаем в роутер новую функцию-обработчик
+InitRouter(handleRouteChange);
+
+page.start();

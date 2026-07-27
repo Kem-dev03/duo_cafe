@@ -1,11 +1,18 @@
+import page from 'page';
 import { home , about , contacts , menu , page404 } from '../pages'
-import page from 'page'
 
-export const InitRouter =(renderApp) => {
-    page(`/`, (ctx) => renderApp(home, ctx.pathname))
-    page(`/about`, (ctx) => renderApp(about, ctx.pathname))
-    page(`/contacts`, (ctx) => renderApp(contacts, ctx.pathname))
-    page(`/menu`, (ctx) => renderApp(menu,ctx.pathname))
-    page(`*`, (ctx) => renderApp(page404,ctx.pathname))
-    page()
-}
+export const InitRouter =(routeHandler) => {
+    // Обрабатываем все варианты корневого пути: /, /index.html и базовый путь /duo_cafe/
+    page(`/`, (ctx) => routeHandler(home, ctx));
+    page(`/index.html`, (ctx) => routeHandler(home, ctx));
+    
+    // Остальные страницы
+    page(`/about`, (ctx) => routeHandler(about, ctx))
+    page(`/contacts`, (ctx) => routeHandler(contacts, ctx))
+    page(`/menu`, (ctx) => routeHandler(menu, ctx))
+    
+    // Страница 404 для всех остальных случаев
+    page(`*`, (ctx) => routeHandler(page404, ctx))
+} 
+
+// page.base('/duo_cafe/'); // Закомментировано для локальной разработки
