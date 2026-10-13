@@ -4,8 +4,6 @@ import pasta1 from "../../../public/images/menu/pasta1.jpg";
 import pasta2 from "../../../public/images/menu/pasta2.jpg";
 import salads from "../../../public/images/menu/salads.jpg";
 import soups from "../../../public/images/menu/soups.jpg";
-import pizza1 from "../../../public/images/menu/pizza1.jpg";
-import pizza2 from "../../../public/images/menu/pizza2.jpg";
 
 export const menu = (t) => {
     return /* html */`
@@ -23,7 +21,6 @@ export const menu = (t) => {
         <div class="menu-container">
             <!-- Пицца (Скрыта по умолчанию, только для Praha 3) -->
             <section class="menu-section fade-in-up pizza-section" id="pizza-section">
-           
             </section>
 
             <!-- Завтраки -->
