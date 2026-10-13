@@ -241,7 +241,6 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
         <div class="menu-container">
             <!-- Пицца (Скрыта по умолчанию, только для Praha 3) -->
             <section class="menu-section fade-in-up pizza-section" id="pizza-section">
-           
             </section>
 
             <!-- Завтраки -->
