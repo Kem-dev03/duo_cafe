@@ -11,17 +11,6 @@ export const menu = (t) => {
         <div class="menu-header">
             <h1 class="menu-title">${t('menu_title')}</h1>
             
-            <!-- Интерактивный переключатель локаций -->
-            <div class="location-switcher">
-                <button class="location-btn active" data-location="praha5">Praha 5</button>
-                <button class="location-btn" data-location="praha3">Praha 3</button>
-            </div>
-        </div>
-
-        <div class="menu-container">
-            <!-- Пицца (Скрыта по умолчанию, только для Praha 3) -->
-            <section class="menu-section fade-in-up pizza-section" id="pizza-section">
-            </section>
 
             <!-- Завтраки -->
             <section class="menu-section fade-in-up">
