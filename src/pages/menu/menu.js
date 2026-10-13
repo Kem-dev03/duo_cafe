@@ -23,9 +23,7 @@ export const menu = (t) => {
         <div class="menu-container">
             <!-- Пицца (Скрыта по умолчанию, только для Praha 3) -->
             <section class="menu-section fade-in-up pizza-section" id="pizza-section">
-                <h2 class="section-title">${t('menu_pizza')}</h2>
-                <div class="menu-image-card"><img src="${pizza1}" alt="Pizza 1"></div>
-                <div class="menu-image-card"><img src="${pizza2}" alt="Pizza 2"></div>
+           
             </section>
 
             <!-- Завтраки -->

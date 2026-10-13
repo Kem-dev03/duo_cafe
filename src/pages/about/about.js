@@ -19,6 +19,14 @@ export const about = (t) =>  {
             </div>
         </section>
 
+        <!-- Вступительный текст сразу после Hero -->
+        <section class="about-intro fade-in-up">
+            <p>${t('about_intro_p1')}</p>
+            <p>${t('about_intro_p2')}</p>
+            <p>${t('about_intro_p3')}</p>
+            <p class="about-intro-closing">${t('about_intro_closing')}</p>
+        </section>
+
         <!-- Секция 1: Бразилия (Текст слева, Картинка справа) -->
         <section class="about-row">
             <div class="about-text fade-in-up">

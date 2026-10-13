@@ -21,7 +21,7 @@ export const contacts = (t) => {
                 </div>
             </div>
             <div class="split-actions">
-                <a href="https://www.google.com/maps/search/?api=1&query=Plzeňská+182/179,+150+00+Praha+5-Košíře" target="_blank" class="btn-neon">${t('btn_navigate') || 'NAVIGOVAT'}</a>
+                <a href="https://www.google.com/maps/dir/Duo+cafe+%26+bistro+Plze%C5%88sk%C3%A1,+Plze%C5%88sk%C3%A1+182%2F179,+150+00+Praha+5-Ko%C5%A1%C3%AD%C5%99e/Duo+cafe+%26+bistro+Plze%C5%88sk%C3%A1,+Plze%C5%88sk%C3%A1+182%2F179,+150+00+Praha+5-Ko%C5%A1%C3%AD%C5%99e/@50.0692472,14.3475547,14z/data=!4m13!4m12!1m5!1m1!1s0x470b95aad281ce45:0xa9a078366fce0c6d!2m2!1d14.3712457!2d50.0698791!1m5!1m1!1s0x470b95aad281ce45:0xa9a078366fce0c6d!2m2!1d14.3712457!2d50.0698791?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-neon">${t('btn_navigate') || 'NAVIGOVAT'}</a>
                 <a href="tel:+420774315847" class="btn-neon">${t('btn_call') || 'ZAVOLAT'}</a>
             </div>
         </div>
@@ -42,7 +42,7 @@ export const contacts = (t) => {
                 </div>
             </div>
             <div class="split-actions">
-                <a href="https://www.google.com/maps/search/?api=1&query=Táboritská+16/24,+130+00+Praha+3-Vinohrady" target="_blank" class="btn-neon">${t('btn_navigate') || 'NAVIGOVAT'}</a>
+                <a href="https://www.google.com/maps/place/Duocafe+%26+Bistro+%C5%BDi%C5%BEkov/@50.0821961,14.4541819,17z/data=!4m14!1m7!3m6!1s0x470b9319241edc6b:0x994fc2658f13c58f!2zRHVvY2FmZSAmIEJpc3RybyDFvWnFvmtvdg!8m2!3d50.0821961!4d14.4567568!16s%2Fg%2F11mrqhbfyf!3m5!1s0x470b9319241edc6b:0x994fc2658f13c58f!8m2!3d50.0821961!4d14.4567568!16s%2Fg%2F11mrqhbfyf?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-neon">${t('btn_navigate') || 'NAVIGOVAT'}</a>
                 <a href="tel:+420608081434" class="btn-neon">${t('btn_call') || 'ZAVOLAT'}</a>
             </div>
         </div>

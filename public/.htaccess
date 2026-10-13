@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Реальные файлы и папки (assets, images, contacts...) отдаём как есть
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Всё остальное (/about, /menu, /contacts и т.д.) отдаём index.html,
+# дальше маршрутизацией занимается клиентский роутер (page.js)
+RewriteRule ^ index.html [L]
